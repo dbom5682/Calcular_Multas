@@ -25,3 +25,11 @@ def calcular_multa_autoestraa(velocidade):
         return 120
     else: 
         return 360
+    
+def menu():
+    print("\n=== MENU DAS MULTAS DE CIRCULAÇÃO ===")
+    print("1 - Localidade")
+    print("2 - Fora da Localidade")
+    print("3 - Autoestrada")
+    print("4 - Sair")
+    return input("Escolha uma opção")
