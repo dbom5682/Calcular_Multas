@@ -16,7 +16,7 @@ def calcular_multa_fora_localidade(velocidade):
     else:
         return 120
     
-def calcular_multa_autoestraa(velocidade):
+def calcular_multa_autoestrada(velocidade):
     if velocidade <= 120:
         return 0
     elif velocidade <= 150:
@@ -33,3 +33,31 @@ def menu():
     print("3 - Autoestrada")
     print("4 - Sair")
     return input("Escolha uma opção")
+
+def main():
+    while True:    
+        opcao = menu()
+        if opcao == '4':
+            print("Programa encerrado.")
+            break
+
+        velocidade = float(input("Digite a velocidade do veículo"))
+
+
+        if opcao == '1':
+            multa = calcular_multa_localidade(velocidade)
+        elif opcao == '2':
+            multa = calcular_multa_fora_localidade(velocidade)
+        elif opcao == '3':
+            multa = calcular_multa_autoestrada(velocidade)
+        else:
+            print("Opção Inválida")
+            continue
+
+        if multa == 0:
+            print("Sem multa. Condução dentro do limite.")
+        else:
+            print(f"Multa a pagar: {multa} $")
+
+if __name__ == "__main__":
+    main()
